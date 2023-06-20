@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<link rel="stylesheet" href="/css/style.css">
+<title>ログイン</title>
+</head>
+
+<body>
+<form action="/auth" method="post" align="center">
+Username: <input type="text" name="uname" size="40" maxlength="12" placeholder="ユーザー名"><br>
+<div class="red"><%= @message %></div>
+password: <input type="password" name ="pass" size="40" maxlength="50" placeholder ="パスワード"><br>
+<br>
+
+<input type ="submit" value="Login"><br>
+<a href="/register"><font size="3">登録はこちらから</font></a>
+</body>
+
+</html>

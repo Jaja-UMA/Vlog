@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>家計簿を登録</title>
+  </head>
+  <body>
+    <h1>家計簿を登録しよう!!!</h1>
+    <form action="/contents/RegiMoney/<%= session[:username] %>/<%= @num %>/auth" method="post" >
+      日付:
+      <input type="date" name="DateOfUseMoney" required><br>
+      支出の種類:
+      <input type="radio" id="IncomeOrSpemding1" name="OR" value="Spend" checked>
+      <label for="IncomeOrSpemding1">支出</label>
+
+      <input type="radio" id="IncomeOrSpemding2" value="Income" name="OR">
+      <label for="IncomeOrSpemding2">収入</label><br>
+
+
+      金額:
+      <input type="text" name="money" maxlength="20" required>円
+      <br>
+      用途:
+      <input type="text" name="contents" maxlength="20" placeholder="必要であればご記入ください">
+
+      <input type="hidden" name="check" value="NoProblem">
+      <br>
+      <input type="submit" value="登録">
+    </form>
+  </body>
+</html>

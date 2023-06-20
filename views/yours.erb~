@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>あなたの家計簿</title>
+  </head>
+  <body>
+  <form action='/logout' method="post">
+<input type="submit" value="ログアウト" style="position: absolute; right: 0px; top: 0px"/>
+</form>
+  <h1>あなたの<%= @strtime %>の家計簿</h1>
+  この月のあなたの支出<%= easysee(@sishutu.to_s) %>円<br>
+  この月のあなたの収入<%= easysee(@shunyuu.to_s) %>円<br>
+  *データを登録しないと支出の詳細は表示されません．<br>
+  <a href="/contents/Yours/<%=@bcyear%>/<%=@bcmon%>"><font size="3">先月の記録</font></a>
+  <a href="/contents/Yours/<%=@nxyear%>/<%=@nxmon%>"><font size="3">翌月の記録</font></a><br>
+  <br>
+  支出部門
+
+    <div style="height:100px; width:500px;overflow-y:scroll;">
+      <table>
+	<tr>
+	  <th>日付</th>
+	  <th>金額</th>
+	  <th>用途</th>
+	</tr>
+	<% @a.each do |book| %>
+	<% tmpdate=book.dateofuse.to_s %>
+	<% date=tmpdate.slice(0..6)%>
+	<% if date == @strtime && book.idforbook == session[:username] && book.sishu == "Spend"  %>
+	<tr>
+          <td><%= book.dateofuse %></td>
+          <td>￥<%= easysee(book.howmuch.to_s) %></td>
+          <td><%= book.contents %></td>
+	</tr>
+	<% end %>
+	<% end %>
+      </table>
+    </div>
+
+
+    収入部門
+    <div style="height:100px; width:500px; overflow-y:scroll;">
+      <table>
+	<tr>
+	  <th>日付</th>
+	  <th>金額</th>
+	  <th>用途</th>
+	</tr>
+	<% @a.each do |book| %>
+	<% tmpdate=book.dateofuse.to_s %>
+	<% date=tmpdate.slice(0..6)%>
+	<% if date == @strtime && book.idforbook == session[:username] && book.sishu == "Income"  %>
+	<tr>
+          <td><%= book.dateofuse %></td>
+          <td>￥<%= easysee(book.howmuch.to_s) %></td>
+          <td><%= book.contents %></td>
+	</tr>
+	<% end %>
+	<% end %>
+      </table>
+    </div>
+    <a href="/contents"><font size="3">メニューに戻る</font></a><br>
+  </body>
+</html>

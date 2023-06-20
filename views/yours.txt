@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>あなたの家計簿</title>
+  </head>
+  <h1>あなたの今月の家計簿</h1>
+  <body>
+    <div calss="flex">
+      <table>
+	<tr>
+	  <th>日付</th>
+	  <th>金額</th>
+	  <th>用途</th>
+	</tr>
+	<% @a.each do |book| %>
+	<% if book.idforbook == session[:username] && book.sishu == "Income" %>
+	<tr>
+          <td><%= book.dateofuse %></td>
+          <td><%= book.howmuch %></td>
+          <td><%= book.contents %></td>
+	</tr>
+	<% end %>
+	<% end %>
+      </table>
+
+
+      <table>
+	<tr>
+	  <th>日付</th>
+	  <th>金額</th>
+	  <th>用途</th>
+	</tr>
+	<% @a.each do |book| %>
+	<% if book.idforbook == session[:username] && book.sishu == "Spend" %>
+	<tr>
+          <td><%= book.dateofuse %></td>
+          <td><%= book.howmuch %></td>
+          <td><%= book.contents %></td>
+	</tr>
+	<% end %>
+	<% end %>
+      </table>
+    </div>
+  </body>
+</html>

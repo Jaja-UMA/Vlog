@@ -1,0 +1,15 @@
+create table accounts(
+  id char(20) primary key,
+  salt varchar(40),
+  hashed varchar(40),
+  algo char(5)
+);
+
+create table books(
+  number INT(20) PRIMARY KEY,
+  idforbook CHAR(20),
+  sishu CHAR(20),
+  contents VARCHAR(60),
+  howmuch MONEY,
+  dateofuse DATE
+);

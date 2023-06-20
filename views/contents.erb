@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script type ="text/javascript" src="search.js"></script>
+    <title>アカウント登録</title>
+  </head>
+  <body>
+    <form action='/logout' method="post">
+      <input type="submit" value="ログアウト" style="position: absolute; right: 0px; top: 0px"/>
+    </form>
+    <a  class="parent" href="/contents/EveryOne" >みんなの家計簿</a><br>
+    <a href="/contents/Yours/<%=@year%>/<%=@mon%>"><font size="12">あなたの家計簿</font></a><br>
+    <a href="/contents/RegiMoney"><font size="3">家計簿を登録</font></a><br>
+
+  </body>
+</html>

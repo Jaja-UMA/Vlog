@@ -1,0 +1,46 @@
+#page-top {
+    display: block;
+    font-weight: bold;
+    padding: .7em;
+    text-align: center;
+    background: #fff;
+    /*背景色*/
+    color: #666;
+    /*文字色*/
+    transition: .3s;
+}
+
+.sample1 {
+    font-size: 1px;
+    font-family: "serif";
+}
+
+.parent {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.red {
+    font-size: 12px;
+    font-family: "serif";
+    color: #f00;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th,
+td {
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+th {
+    background-color: #2c88d9;
+    color: #FFF;
+}

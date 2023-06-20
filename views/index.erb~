@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>ようこそ</title>
+</head>
+<body>
+ハロー、ページを閲覧するためにはログインしてください
+<form action="/login" >
+<button type="submit" >ログイン</button>
+</form>
+<br>
+<a href="/register"><font size="3">登録はこちらから</font></a>
+</body>
+</html>
